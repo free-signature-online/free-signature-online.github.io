@@ -14,6 +14,15 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		
+		<!-- Google tag (gtag.js) -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-EE8K0TLL9X"></script>
+		<script is:inline>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-EE8K0TLL9X');
+		</script>
 		<!-- SEO Tags -->
 		<title>{title}</title>
 		<meta name="description" content="Create a digital signature online for free. Draw or type your signature, and download it instantly. 100% private and secure - no data leaves your browser." />
