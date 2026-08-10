@@ -1,0 +1,87 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Tags -->
+		<title>{title}</title>
+		<meta name="description" content="Create a digital signature online for free. Draw or type your signature, and download it instantly. 100% private and secure - no data leaves your browser." />
+		<link rel="canonical" href="https://free-signature-online.github.io/" />
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="Create a digital signature online for free. Draw or type your signature, and download it instantly." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://free-signature-online.github.io/" />
+		<meta property="og:image" content="https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content="Create a digital signature online for free. Draw or type your signature, and download it instantly." />
+		<meta name="twitter:image" content="https://res.cloudinary.com/dpx6w78bt/image/upload/f_auto/q_auto/v1786342039/Online_Tool_rc1ybr.png" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebApplication",
+				"name": "Free Online Signature Maker",
+				"url": "https://free-signature-online.github.io/",
+				"description": "A free, client-side tool to draw or type your digital signature and download it as an image.",
+				"applicationCategory": "UtilitiesApplication",
+				"operatingSystem": "All",
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD"
+				}
+			}
+		</script>
+
+		<!-- Google Fonts for Typed Signatures & UI -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Homemade+Apple&family=Inter:wght@300;400;500;600;700&family=Pacifico&family=Parisienne&family=Sacramento&family=Satisfy&family=Yellowtail&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-slate-50 text-slate-900 font-sans min-h-screen flex flex-col">
+		<header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+				<div class="flex items-center gap-3">
+					<img src="/favicon.svg" alt="Free Signature Maker Logo" class="w-8 h-8 drop-shadow-sm hover:scale-105 transition-transform" />
+					<span class="font-semibold text-lg tracking-tight text-slate-800">Free Signature Maker</span>
+				</div>
+			</div>
+		</header>
+
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+		<footer class="bg-white border-t border-slate-200 mt-20 py-8">
+			<div class="max-w-5xl mx-auto px-4 text-center text-slate-500 text-sm">
+				<p>&copy; {new Date().getFullYear()} Free Signature Maker. All rights reserved.</p>
+				<p class="mt-2">Built for privacy. 100% client-side processing.</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+	}
+	/* Prevent pull-to-refresh on mobile while drawing */
+	body {
+		overscroll-behavior-y: none;
+	}
+</style>

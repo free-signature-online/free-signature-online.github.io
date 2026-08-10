@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SignatureTool from '../components/SignatureTool.jsx';
+import { ShieldCheck, Zap, Download } from 'lucide-react';
+---
+
+<Layout title="Free Online Signature Maker - Draw or Type Your Signature">
+	<div class="pt-12 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+		
+		<!-- Hero Section -->
+		<div class="text-center mb-12">
+			<h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+				Create Your Digital Signature
+			</h1>
+			<p class="text-lg text-slate-600 max-w-2xl mx-auto">
+				Draw or type your signature below. It's fast, free, and 100% private - no data ever leaves your browser.
+			</p>
+		</div>
+
+		<!-- The React Island -->
+		<SignatureTool client:load />
+
+		<!-- Value Proposition Section -->
+		<div class="mt-24 border-t border-slate-200 pt-16">
+			<h2 class="text-3xl font-bold text-center text-slate-900 mb-12">How to Create a Digital Signature</h2>
+			
+			<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+				<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center">
+					<div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-xl font-bold">1</span>
+					</div>
+					<h3 class="text-xl font-semibold mb-2">Draw or Type</h3>
+					<p class="text-slate-600">Use your mouse or finger to draw your signature, or type your name and pick a beautiful cursive font.</p>
+				</div>
+				
+				<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center">
+					<div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-xl font-bold">2</span>
+					</div>
+					<h3 class="text-xl font-semibold mb-2">Customize</h3>
+					<p class="text-slate-600">Adjust the pen thickness and color to match your style. Undo any mistakes instantly.</p>
+				</div>
+				
+				<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center">
+					<div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+						<span class="text-xl font-bold">3</span>
+					</div>
+					<h3 class="text-xl font-semibold mb-2">Download</h3>
+					<p class="text-slate-600">Click download to save your signature as a transparent PNG image, ready to use on PDFs or documents.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Trust Badges -->
+		<div class="mt-20 bg-indigo-50 rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto">
+			<h2 class="text-2xl font-bold text-slate-900 mb-8">100% Private & Secure</h2>
+			<div class="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16">
+				<div class="flex flex-col items-center">
+					<ShieldCheck className="w-10 h-10 text-indigo-600 mb-3" />
+					<h4 class="font-semibold text-slate-900">Zero Server Storage</h4>
+					<p class="text-sm text-slate-600 mt-1 max-w-[200px]">Your signature is generated entirely in your browser.</p>
+				</div>
+				<div class="flex flex-col items-center">
+					<Zap className="w-10 h-10 text-indigo-600 mb-3" />
+					<h4 class="font-semibold text-slate-900">Instant Download</h4>
+					<p class="text-sm text-slate-600 mt-1 max-w-[200px]">No sign-ups, no wait times, no watermarks.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- FAQ Section -->
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "FAQPage",
+			  "mainEntity": [{
+			    "@type": "Question",
+			    "name": "Is this signature maker really free?",
+			    "acceptedAnswer": {
+			      "@type": "Answer",
+			      "text": "Yes! Our tool is 100% free to use. There are no hidden fees, no subscriptions, and no watermarks on your downloaded signatures."
+			    }
+			  }, {
+			    "@type": "Question",
+			    "name": "Is my data secure?",
+			    "acceptedAnswer": {
+			      "@type": "Answer",
+			      "text": "Absolutely. The entire application runs locally in your browser. We do not have servers that process or store your signature, ensuring complete privacy."
+			    }
+			  }, {
+			    "@type": "Question",
+			    "name": "Can I use this for legal documents?",
+			    "acceptedAnswer": {
+			      "@type": "Answer",
+			      "text": "Yes, in most jurisdictions, electronic signatures are legally binding. You can use the downloaded PNG image to sign PDFs, Word documents, and contracts."
+			    }
+			  }, {
+			    "@type": "Question",
+			    "name": "What format will my signature be saved in?",
+			    "acceptedAnswer": {
+			      "@type": "Answer",
+			      "text": "Your signature is downloaded as a high-quality PNG image with a transparent background, making it perfect for placing over any document."
+			    }
+			  }]
+			}
+		</script>
+		<div class="mt-24 max-w-3xl mx-auto">
+			<h2 class="text-3xl font-bold text-center text-slate-900 mb-10">Frequently Asked Questions</h2>
+			<div class="space-y-6">
+				<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+					<h3 class="text-lg font-semibold text-slate-900 mb-2">Is this signature maker really free?</h3>
+					<p class="text-slate-600">Yes! Our tool is 100% free to use. There are no hidden fees, no subscriptions, and no watermarks on your downloaded signatures.</p>
+				</div>
+				<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+					<h3 class="text-lg font-semibold text-slate-900 mb-2">Is my data secure?</h3>
+					<p class="text-slate-600">Absolutely. The entire application runs locally in your browser. We do not have servers that process or store your signature, ensuring complete privacy.</p>
+				</div>
+				<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+					<h3 class="text-lg font-semibold text-slate-900 mb-2">Can I use this for legal documents?</h3>
+					<p class="text-slate-600">Yes, in most jurisdictions, electronic signatures are legally binding. You can use the downloaded PNG image to sign PDFs, Word documents, and contracts.</p>
+				</div>
+				<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+					<h3 class="text-lg font-semibold text-slate-900 mb-2">What format will my signature be saved in?</h3>
+					<p class="text-slate-600">Your signature is downloaded as a high-quality PNG image with a transparent background, making it perfect for placing over any document.</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</Layout>

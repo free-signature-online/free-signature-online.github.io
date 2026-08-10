@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://free-signature-online.github.io/sitemap-index.xml
